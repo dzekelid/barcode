@@ -1,0 +1,165 @@
+---
+swagger: "2.0"
+x-collection-name: Plentymarkets
+x-complete: 1
+info:
+  title: plentymarkets REST-API
+  description: the-plentymarkets-rest-api-expands-the-functionality-of-the-plentymarkets-cms-and-allows-access-to-resources-i-e--data-records-via-unique-uri-paths
+  contact:
+    name: plentymarkets
+    url: https://forum.plentymarkets.com/c/rest-api
+  version: 1.0.0
+host: example.com
+basePath: /
+schemes:
+- http
+produces:
+- application/json
+consumes:
+- application/json
+paths:
+  /rest/items/barcodes:
+    post:
+      summary: Create a barcode
+      description: Creates a barcode.
+      operationId: postRestItemsBarcodes
+      x-api-path-slug: restitemsbarcodes-post
+      parameters:
+      - in: body
+        name: /rest/items/barcodes
+        schema:
+          $ref: '#/definitions/holder'
+      responses:
+        200:
+          description: OK
+      tags:
+      - Barcode
+  /rest/items/barcodes/{barcodeId}:
+    delete:
+      summary: Delete a barcode
+      description: Deletes a barcode. The ID of the barcode must be specified.
+      operationId: deleteRestItemsBarcodesBarcode
+      x-api-path-slug: restitemsbarcodesbarcodeid-delete
+      parameters:
+      - in: path
+        name: barcodeId
+      responses:
+        200:
+          description: OK
+      tags:
+      - Barcode
+    get:
+      summary: Get a barcode
+      description: Gets a barcode. The ID of the barcode must be specified.
+      operationId: getRestItemsBarcodesBarcode
+      x-api-path-slug: restitemsbarcodesbarcodeid-get
+      parameters:
+      - in: path
+        name: barcodeId
+      responses:
+        200:
+          description: OK
+      tags:
+      - Barcode
+    put:
+      summary: Update a barcode
+      description: Updates a barcode. The ID of the barcode must be specified.
+      operationId: putRestItemsBarcodesBarcode
+      x-api-path-slug: restitemsbarcodesbarcodeid-put
+      parameters:
+      - in: body
+        name: /rest/items/barcodes/{barcodeId}
+        schema:
+          $ref: '#/definitions/holder'
+      - in: path
+        name: barcodeId
+      responses:
+        200:
+          description: OK
+      tags:
+      - Barcode
+  /rest/items/{id}/variations/{variationId}/variation_barcodes:
+    post:
+      summary: Create a variation barcode
+      description: Creates a variation barcode. The ID of the item, the ID of the
+        variation, the ID of the barcode and the code must be specified.
+      operationId: postRestItemsVariationsVariationVariationBarcodes
+      x-api-path-slug: restitemsidvariationsvariationidvariation-barcodes-post
+      parameters:
+      - in: body
+        name: /rest/items/{id}/variations/{variationId}/variation_barcodes
+        schema:
+          $ref: '#/definitions/holder'
+      - in: path
+        name: id
+      - in: path
+        name: variationId
+      responses:
+        200:
+          description: OK
+      tags:
+      - Variation
+      - Barcode
+  /rest/items/{id}/variations/{variationId}/variation_barcodes/{barcodeId}:
+    delete:
+      summary: Delete a variation barcode
+      description: Deletes a variation barcode. Unlinks the barcode from the variation
+        and deletes the code saved for the variation.
+      operationId: deleteRestItemsVariationsVariationVariationBarcodesBarcode
+      x-api-path-slug: restitemsidvariationsvariationidvariation-barcodesbarcodeid-delete
+      parameters:
+      - in: path
+        name: barcodeId
+      - in: path
+        name: id
+      - in: path
+        name: variationId
+      responses:
+        200:
+          description: OK
+      tags:
+      - Variation
+      - Barcode
+    get:
+      summary: Get a variation barcode
+      description: Get a specific variation barcode. The ID of the item, the ID of
+        the variation and the ID of the barcode must be specified.
+      operationId: getRestItemsVariationsVariationVariationBarcodesBarcode
+      x-api-path-slug: restitemsidvariationsvariationidvariation-barcodesbarcodeid-get
+      parameters:
+      - in: path
+        name: barcodeId
+      - in: path
+        name: id
+      - in: path
+        name: variationId
+      responses:
+        200:
+          description: OK
+      tags:
+      - Variation
+      - Barcode
+    put:
+      summary: Update a variation barcode
+      description: Updates a variation barcode. The ID of the item, the ID of the
+        variation, the ID of the barcode and the code must be specified.
+      operationId: putRestItemsVariationsVariationVariationBarcodesBarcode
+      x-api-path-slug: restitemsidvariationsvariationidvariation-barcodesbarcodeid-put
+      parameters:
+      - in: body
+        name: /rest/items/{id}/variations/{variationId}/variation_barcodes/{barcodeId}
+        schema:
+          $ref: '#/definitions/holder'
+      - in: path
+        name: barcodeId
+      - in: path
+        name: id
+      - in: path
+        name: variationId
+      responses:
+        200:
+          description: OK
+      tags:
+      - Variation
+      - Barcode
+---
