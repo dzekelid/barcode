@@ -1,9 +1,11 @@
+---
 swagger: "2.0"
 x-collection-name: Plentymarkets
-x-complete: 1
+x-complete: 0
 info:
-  title: plentymarkets REST-API
-  description: the-plentymarkets-rest-api-expands-the-functionality-of-the-plentymarkets-cms-and-allows-access-to-resources-i-e--data-records-via-unique-uri-paths
+  title: Plentymarkets Delete a variation barcode
+  description: Deletes a variation barcode. Unlinks the barcode from the variation
+    and deletes the code saved for the variation.
   contact:
     name: plentymarkets
     url: https://forum.plentymarkets.com/c/rest-api
@@ -119,45 +121,17 @@ paths:
       tags:
       - Variation
       - Barcode
-    get:
-      summary: Get a variation barcode
-      description: Get a specific variation barcode. The ID of the item, the ID of
-        the variation and the ID of the barcode must be specified.
-      operationId: getRestItemsVariationsVariationVariationBarcodesBarcode
-      x-api-path-slug: restitemsidvariationsvariationidvariation-barcodesbarcodeid-get
-      parameters:
-      - in: path
-        name: barcodeId
-      - in: path
-        name: id
-      - in: path
-        name: variationId
-      responses:
-        200:
-          description: OK
-      tags:
-      - Variation
-      - Barcode
-    put:
-      summary: Update a variation barcode
-      description: Updates a variation barcode. The ID of the item, the ID of the
-        variation, the ID of the barcode and the code must be specified.
-      operationId: putRestItemsVariationsVariationVariationBarcodesBarcode
-      x-api-path-slug: restitemsidvariationsvariationidvariation-barcodesbarcodeid-put
-      parameters:
-      - in: body
-        name: /rest/items/{id}/variations/{variationId}/variation_barcodes/{barcodeId}
-        schema:
-          $ref: '#/definitions/holder'
-      - in: path
-        name: barcodeId
-      - in: path
-        name: id
-      - in: path
-        name: variationId
-      responses:
-        200:
-          description: OK
-      tags:
-      - Variation
-      - Barcode
+x-streamrank:
+  polling_total_time_average: 0
+  polling_size_download_average: 0
+  streaming_total_time_average: 0
+  streaming_size_download_average: 0
+  change_yes: 0
+  change_no: 0
+  time_percentage: 0
+  size_percentage: 0
+  change_percentage: 0
+  last_run: ""
+  days_run: 0
+  minute_run: 0
+---

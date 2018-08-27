@@ -1,4 +1,3 @@
----
 swagger: "2.0"
 x-collection-name: Coord
 x-complete: 1
@@ -14,4 +13,26 @@ produces:
 - application/json
 consumes:
 - application/json
----
+paths:
+  /barcode:
+    post:
+      summary: Create a barcode
+      description: Create a barcode for a user to be scanned upon entering/exiting
+        a parking lot.
+      operationId: create_barcode
+      x-api-path-slug: barcode-post
+      parameters:
+      - in: query
+        name: access_key
+        description: The API access key for the request
+      - in: body
+        name: request
+        description: A request to simulate an arrival/departure associated with the
+          session
+        schema:
+          $ref: '#/definitions/holder'
+      responses:
+        200:
+          description: OK
+      tags:
+      - Barcode

@@ -8,11 +8,22 @@ image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/l
 x-kinRank: "7"
 x-alexaRank: "1035226"
 tags: Barcode
-created: "2018-08-25"
-modified: "2018-08-25"
+created: "2018-08-27"
+modified: "2018-08-27"
 url: https://raw.githubusercontent.com/streamdata-gallery-topics/barcode/master/_listings/coord/apis.md
 specificationVersion: "0.14"
-apis: []
+apis:
+- name: Parking Access API - Create a barcode
+  x-api-slug: barcode-post
+  description: Create a barcode for a user to be scanned upon entering/exiting a parking
+    lot.
+  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/coord-logo.png
+  humanURL: https://coord.co
+  baseURL: https://api.coord.co//v1/access/parking
+  tags: Parking, Tolls, Bikes, Routes, General Data, Relative Data, Service API
+  properties:
+  - type: x-openapi-spec
+    url: https://raw.githubusercontent.com/streamdata-gallery-topics/barcode/master/_listings/coord/barcode-post-openapi.md
 x-common:
 - type: x-blog
   url: https://medium.com/coord
